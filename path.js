@@ -21,7 +21,7 @@ var Path = {
                 var compare = path;
                 if (route.search(/:/) > 0) {
                     for (i = 0; i < route.split("/").length; i++) {
-                        if ((i < compare.split("/").length) && (route.split("/")[i][0] === ":")) {
+                        if ((i < compare.split("/").length) && (route.split("/")[i].charAt(0) === ":")) {
                             params[route.split('/')[i].replace(/:/, '')] = compare.split("/")[i];
                             compare = compare.replace(compare.split("/")[i], route.split("/")[i]);
                         }
